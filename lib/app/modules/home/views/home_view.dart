@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:nlw_return/app/ui/theme/phosphor_icons.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -42,7 +43,7 @@ class HomeView extends GetView<HomeController> {
             },
           );
         },
-        child: const Icon(Icons.chat_bubble_outlined),
+        child: const Icon(Phosphor.chat_teardrop_dots),
       ),
       drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
