@@ -28,6 +28,7 @@ class HomeView extends GetView<HomeController> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
+            isDismissible: false,
             backgroundColor: const Color(0xFF18181B),
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.only(

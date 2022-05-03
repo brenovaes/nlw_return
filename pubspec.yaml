@@ -23,6 +23,9 @@ flutter:
     - family: Inter
       fonts:
         - asset: assets/fonts/Inter/Inter-Regular.ttf
+    - family: Phosphor
+      fonts:
+        - asset: assets/fonts/Phosphor/Phosphor.ttf
   assets:
     - assets/images/Bug.png
     - assets/images/Idea.png

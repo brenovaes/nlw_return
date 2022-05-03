@@ -7,7 +7,7 @@ class HomeController extends GetxController {
   final selectedCard = Rxn<int>();
   final pages = [
     const FirstModalBottomSheetPage(),
-    SecondModalBottomSheetPage(),
+    const SecondModalBottomSheetPage(),
   ];
   final pagesDescription = [
     {
