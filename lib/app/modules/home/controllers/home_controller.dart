@@ -1,13 +1,15 @@
 import 'package:get/get.dart';
 import 'package:nlw_return/app/modules/home/views/widgets/first_modal_bottom_sheet_page.dart';
 import 'package:nlw_return/app/modules/home/views/widgets/second_modal_bottom_sheet_page.dart';
+import 'package:nlw_return/app/modules/home/views/widgets/third_modal_bottom_sheet_page.dart';
 
 class HomeController extends GetxController {
   final currentView = 0.obs;
   final selectedCard = Rxn<int>();
   final pages = [
     const FirstModalBottomSheetPage(),
-    const SecondModalBottomSheetPage(),
+    SecondModalBottomSheetPage(),
+    const ThirdModalBottomSheetPage(),
   ];
   final pagesDescription = [
     {

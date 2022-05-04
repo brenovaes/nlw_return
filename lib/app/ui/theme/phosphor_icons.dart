@@ -11,8 +11,10 @@
 ///      fonts:
 ///       - asset: fonts/Phosphor.ttf
 ///
-/// 
 ///
+///
+// ignore_for_file: constant_identifier_names
+
 import 'package:flutter/widgets.dart';
 
 class Phosphor {
@@ -21,10 +23,16 @@ class Phosphor {
   static const _kFontFam = 'Phosphor';
   static const String? _kFontPkg = null;
 
-  static const IconData arrow_left = IconData(0xf282, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData camera = IconData(0xf306, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData chat_teardrop_dots = IconData(0xf338, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData circle_notch = IconData(0xf347, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData trash = IconData(0xf602, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData x = IconData(0xf642, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData arrow_left =
+      IconData(0xf282, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData camera =
+      IconData(0xf306, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData chat_teardrop_dots =
+      IconData(0xf338, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData circle_notch =
+      IconData(0xf347, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData trash =
+      IconData(0xf602, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData x =
+      IconData(0xf642, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

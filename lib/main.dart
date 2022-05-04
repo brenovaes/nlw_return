@@ -14,6 +14,11 @@ void main() {
       theme: ThemeData(
         primarySwatch: Palette.kToDark,
         fontFamily: 'Inter',
+        scrollbarTheme: const ScrollbarThemeData().copyWith(
+          thumbColor: MaterialStateProperty.all(
+            const Color(0xFF52525B),
+          ),
+        ),
       ),
     ),
   );

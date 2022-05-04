@@ -141,33 +141,37 @@ class HomeView extends GetView<HomeController> {
                   width: 24,
                   height: 24,
                   child: Obx(
-                    () => controller.currentView.value == 0
-                        ? const SizedBox.shrink()
-                        : IconButton(
+                    () => controller.currentView.value == 1
+                        ? IconButton(
                             onPressed: () => controller.currentView.value--,
                             icon: const Icon(Icons.arrow_back),
                             iconSize: 24,
                             color: const Color(0xFFA1A1AA),
                             padding: EdgeInsets.zero,
                             constraints: const BoxConstraints(),
-                          ),
+                          )
+                        : const SizedBox.shrink(),
                   ),
                 ),
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.only(right: 24),
                     child: Center(
-                      child: Obx(() => Text(
-                            controller.currentView.value == 0
-                                ? 'Deixe seu feedback'
-                                : controller.pagesDescription[
-                                        controller.selectedCard.value as int]
-                                    ['title'] as String,
-                            style: const TextStyle(
-                              color: Color(0xFFF4F4F5),
-                              fontSize: 20,
-                            ),
-                          )),
+                      child: Obx(
+                        () => Text(
+                          controller.currentView.value != 1
+                              ? controller.currentView.value == 2
+                                  ? ''
+                                  : 'Deixe seu feedback'
+                              : controller.pagesDescription[
+                                      controller.selectedCard.value as int]
+                                  ['title'] as String,
+                          style: const TextStyle(
+                            color: Color(0xFFF4F4F5),
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ),

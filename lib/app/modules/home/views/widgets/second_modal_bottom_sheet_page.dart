@@ -1,40 +1,57 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:nlw_return/app/modules/home/controllers/home_controller.dart';
 import 'package:nlw_return/app/ui/theme/phosphor_icons.dart';
 
 class SecondModalBottomSheetPage extends StatelessWidget {
-  const SecondModalBottomSheetPage({Key? key}) : super(key: key);
+  SecondModalBottomSheetPage({Key? key}) : super(key: key);
+
+  final ScrollController _scrollController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
+    return _buildContent();
+  }
+
+  Padding _buildContent() {
+    final controller = Get.find<HomeController>();
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
-          TextFormField(
-            decoration: const InputDecoration(
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: Color(0xFF8257E5),
+          Scrollbar(
+            controller: _scrollController,
+            isAlwaysShown: true,
+            radius: const Radius.circular(4),
+            child: Obx(
+              () => TextFormField(
+                decoration: InputDecoration(
+                  focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFF8257E5),
+                    ),
+                  ),
+                  enabledBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFFA1A1AA),
+                    ),
+                  ),
+                  contentPadding: const EdgeInsets.all(8),
+                  hintText: controller.pagesDescription[
+                          controller.selectedCard.value as int]['placeholder']
+                      as String,
+                  hintStyle: const TextStyle(
+                    color: Color(0xFFA1A1AA),
+                  ),
+                ),
+                minLines: 4,
+                maxLines: 4,
+                style: const TextStyle(
+                  color: Color(0xFFF4F4F5),
+                  fontSize: 14,
                 ),
               ),
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: Color(0xFFA1A1AA),
-                ),
-              ),
-              contentPadding: EdgeInsets.all(8),
-              hintText:
-                  'Algo não está funcionando bem? Queremos corrigir. Conte com detalhes o que está acontecendo...',
-              hintStyle: TextStyle(
-                color: Color(0xFFA1A1AA),
-              ),
             ),
-            style: const TextStyle(
-              color: Color(0xFFF4F4F5),
-              fontSize: 14,
-            ),
-            minLines: 4,
-            maxLines: 4,
           ),
           const SizedBox(
             height: 8,
@@ -70,7 +87,7 @@ class SecondModalBottomSheetPage extends StatelessWidget {
                         const Color(0xFF8257E5),
                       ),
                     ),
-                    onPressed: () => print('teste'),
+                    onPressed: () => controller.currentView.value++,
                     child: const Text(
                       'Enviar feedback',
                     ),
